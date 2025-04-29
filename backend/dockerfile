@@ -1,0 +1,23 @@
+FROM golang:1.18.3-alpine3.16 AS builder
+WORKDIR /
+# ADD . .
+# RUN go build -o bin/rp2 /cmd/main.go
+
+# FROM alpine:3.16.0
+# RUN apk add --no-cache curl
+
+# WORKDIR /
+
+# COPY --from=builder /bin/rp2 .
+# COPY --from=builder /config/example_config.yaml /config/config.yaml
+# COPY --from=builder /internal/constant/query/schemas /internal/constant/query/schemas
+# COPY --from=builder /public.example.pem /public.example.pem
+# COPY --from=builder /usr/local/go/lib/time/zoneinfo.zip /zoneinfo.zip
+
+# ENV ZONEINFO=/zoneinfo.zip
+
+# EXPOSE 8000
+
+# HEALTHCHECK --timeout=3s CMD curl --fail http://localhost:8000/metrics || exit 1
+
+# ENTRYPOINT [ "./rp2" ]
